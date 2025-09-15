@@ -1,0 +1,12 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=https://YOUR-MLD-URL-HERE">
+<title>Redirecting…</title>
+<link rel="canonical" href="https://YOUR-MLD-URL-HERE">
+<script>
+  const target = new URL("https://YOUR-MLD-URL-HERE");
+  const qs = new URLSearchParams(location.search);
+  qs.forEach((v,k)=>target.searchParams.set(k,v));
+  location.replace(target.toString());
+</script>
+<p>Redirecting to Major League Dev…</p>
