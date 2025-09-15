@@ -56,7 +56,7 @@
     }
     .chip i{width:6px; height:6px; border-radius:50%; background:var(--studio-green); box-shadow:0 0 10px var(--studio-green)}
 
-    /* ============ Hero (open, no box) ============ */
+    /* ============ Hero (open band) ============ */
     .hero-band{
       margin-top:28px; border-radius:24px; overflow:hidden;
       background:
@@ -92,7 +92,7 @@
     }
     .btn.secondary:hover{ transform:translateY(-1px); box-shadow:0 8px 22px rgba(0,40,104,.25) }
 
-    /* ============ Details row (airy, no cards) ============ */
+    /* ============ Details row (airy) ============ */
     .details{
       margin-top:26px; padding:0 clamp(6px, 1vw, 10px);
       display:grid; grid-template-columns:1fr; gap:18px;
@@ -116,6 +116,21 @@
         rgba(255,255,255,.01);
     }
     .kicker{font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px; margin-bottom:6px}
+
+    /* ============ Future Plans ============ */
+    .future{
+      margin-top:20px; padding:20px clamp(16px, 2vw, 20px);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+        radial-gradient(110% 120% at -10% 120%, rgba(57,255,20,.10), transparent 60%),
+        rgba(255,255,255,.01);
+    }
+    .future h3{margin:0 0 8px; font-size:20px; font-weight:800; letter-spacing:.2px}
+    .future p{margin:8px 0 0; color:var(--muted)}
+    .future ul{margin:10px 0 0 18px; color:var(--ink)}
+    .future li{margin:6px 0}
 
     /* ============ Footer ============ */
     footer{margin:34px 0 12px; color:var(--muted); font-size:12.5px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
@@ -146,7 +161,7 @@
       </div>
     </section>
 
-    <!-- Details (airy, no chunky cards) -->
+    <!-- Details (airy) -->
     <section class="details">
       <div class="block studio">
         <div class="kicker">About</div>
@@ -157,6 +172,20 @@
         <p style="margin:0 0 10px"><strong>Major League Dev</strong> — profiles, project pages, remix cards, and a curated feed for builders.</p>
         <a class="btn mld" href="go/">Launch Major League Dev</a>
       </div>
+    </section>
+
+    <!-- Future Plans -->
+    <section class="future" id="future">
+      <h3>What’s Next for Major League Dev</h3>
+      <p>
+        We’re building a home for builders with **affordable, practical tools** that help you ship faster.
+      </p>
+      <ul>
+        <li>💡 Lower-cost building blocks for indie teams and solo founders</li>
+        <li>⚡ Remixable project pages and components you can drop into your stack</li>
+        <li>📣 A daily pulse + community spaces that surface what’s working right now</li>
+      </ul>
+      <p>Our goal is simple: <strong>make the future of online building accessible to everyone.</strong></p>
     </section>
 
     <footer>
