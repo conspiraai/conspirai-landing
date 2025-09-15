@@ -5,141 +5,127 @@
   <title>Conspira AI × Major League Dev</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Conspira AI is a creative studio. Our flagship project is Major League Dev — a creator-first network where developers ship, remix, and get seen." />
+  <meta name="theme-color" content="#0B0B12" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Social cards -->
   <meta property="og:title" content="Conspira AI — Presenting Major League Dev" />
   <meta property="og:description" content="Exploring the future of online building." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://conspirai.com" />
-  <meta property="og:image" content="https://conspirai.com/og.jpg" /> <!-- TODO: replace when live -->
+  <!-- Replace this image URL when you have one -->
+  <meta property="og:image" content="https://conspirai.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@Conspira_AI" /> <!-- TODO: your handle -->
-  <meta name="theme-color" content="#0B0B12" />
 
   <style>
     :root{
-      --bg:#0b0b12; --card:#111320; --ink:#f5f7ff; --muted:#a6a9b8; --line:#1d2133;
-      --accent:#8a7aff; --accent2:#00f0ff; --radius:16px; --shadow:0 8px 30px rgba(0,0,0,.4);
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      /* Brand tokens (MLD vibe) */
+      --bg:#0b0b12;         /* deep indigo/black */
+      --ink:#F6F7FF;        /* near-white text */
+      --muted:#A6A9B8;      /* secondary text */
+      --line:#1D2133;       /* subtle borders */
+      --card:#111320;       /* card surface */
+      --accent:#8A7AFF;     /* neon violet */
+      --accent2:#00F0FF;    /* cyan glow */
+      --r:16px;             /* radius */
+      --shadow:0 8px 30px rgba(0,0,0,.45);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+
+    *{box-sizing:border-box} html,body{height:100%}
     body{
-      margin:0; background:
-        radial-gradient(1200px 700px at 80% -10%, rgba(138,122,255,.15), transparent 60%),
-        radial-gradient(1000px 600px at 10% 110%, rgba(0,240,255,.10), transparent 60%), var(--bg);
-      color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased; line-height:1.45;
+      margin:0; color:var(--ink); font-family:var(--font); line-height:1.4; -webkit-font-smoothing:antialiased;
+      background:
+        radial-gradient(1200px 680px at 80% -10%, rgba(138,122,255,.16), transparent 60%),
+        radial-gradient(1000px 600px at 10% 110%, rgba(0,240,255,.10), transparent 60%),
+        var(--bg);
     }
-    .wrap{max-width:1080px; margin:0 auto; padding:24px}
+
+    .wrap{max-width:980px; margin:0 auto; padding:22px}
+
+    /* Header */
     header{display:flex; align-items:center; gap:12px}
-    .logo{
-      width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(138,122,255,.18), rgba(0,240,255,.14)); border:1px solid var(--line);
-    }
+    .logo{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(138,122,255,.18), rgba(0,240,255,.14)); border:1px solid var(--line)}
     .wordmark{font-weight:700; letter-spacing:.2px}
-    .chip{
-      margin-left:auto; display:inline-flex; align-items:center; gap:8px; padding:8px 10px;
-      border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--muted);
-      background:rgba(255,255,255,.02);
-    }
-    .chip i{width:6px;height:6px;border-radius:50%;background:var(--accent2);box-shadow:0 0 14px var(--accent2)}
+    .chip{margin-left:auto; font-size:12.5px; color:var(--muted); padding:6px 10px; border:1px solid var(--line);
+      border-radius:999px; background:rgba(255,255,255,.03); display:inline-flex; align-items:center; gap:8px}
+    .chip i{width:6px;height:6px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
 
-    .hero{margin-top:64px; display:grid; gap:18px; max-width:780px}
-    .eyebrow{color:var(--muted); font-size:14px; letter-spacing:.5px; text-transform:uppercase}
-    h1{font-size: clamp(32px, 4.2vw, 56px); line-height:1.1; margin:0}
-    .sub{font-size: clamp(16px, 2vw, 20px); color:var(--muted)}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+    /* Hero */
+    .hero{
+      margin-top:34px; border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
+        radial-gradient(160% 140% at 100% -20%, rgba(138,122,255,.18), transparent 60%),
+        radial-gradient(160% 120% at -10% 120%, rgba(0,240,255,.12), transparent 60%),
+        var(--card);
+      padding:28px;
+    }
+    .eyebrow{color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.4px}
+    h1{margin:8px 0 10px; font-size: clamp(28px, 4.4vw, 48px); line-height:1.08}
+    .sub{color:var(--muted); font-size: clamp(15px, 2.1vw, 18px); max-width:720px}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
     .btn{
-      appearance:none;border:none;cursor:pointer;background:linear-gradient(180deg, var(--accent), #6e5eff);
-      color:#0a0a12;font-weight:700;padding:14px 18px;border-radius:12px;box-shadow:var(--shadow);
-      text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(180deg, var(--accent), #6e5eff);
+      color:#0a0a12; font-weight:700; font-size:14px; padding:12px 16px; border-radius:12px;
+      text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:var(--shadow)
     }
-    .btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
-    .btn:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+    .btn.secondary{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
 
-    .grid{display:grid; grid-template-columns:1fr; gap:16px; margin-top:36px}
-    @media(min-width:900px){ .grid{grid-template-columns:1.2fr .8fr} }
+    /* Cards row */
+    .row{display:grid; gap:14px; margin-top:16px}
+    @media (min-width:860px){ .row{grid-template-columns:1fr 1fr} }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border:1px solid var(--line); border-radius:var(--r); padding:18px; box-shadow:var(--shadow)}
+    .kicker{font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px; margin-bottom:6px}
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
-      border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
-    }
-    .kicker{font-size:13px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
-    .list{display:grid; gap:10px; margin-top:8px}
-    .list li{list-style:none; padding:10px 12px; background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px}
-
-    .glow{position:relative}
-    .glow::after{
-      content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px);
-      background: conic-gradient(from 180deg at 50% 50%, rgba(138,122,255,.35), rgba(0,240,255,.25), rgba(138,122,255,.35));
-      filter: blur(28px); opacity:.25; z-index:-1;
-    }
-    footer{margin:40px 0 12px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    footer{margin:28px 0 12px; color:var(--muted); font-size:12.5px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
     a.link{color:#cfd2ff; text-underline-offset:3px}
-    .note{font-size:12px;color:var(--muted)}
-    textarea{
-      width:100%; min-height:140px; padding:12px; resize:vertical;
-      background:#0f1220; color:var(--ink); border:1px solid var(--line); border-radius:12px; font-family:var(--font); font-size:14px;
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header aria-label="Site header">
+    <header>
       <div class="logo" aria-hidden="true">
+        <!-- inline SVG so no external asset needed -->
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 14c3-6 13-6 16 0-3 6-13 6-16 0Z" stroke="url(#g)" stroke-width="1.5"/>
-          <defs><linearGradient id="g" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#8a7aff"/><stop offset="1" stop-color="#00f0ff"/></linearGradient></defs>
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="24" y2="24">
+              <stop stop-color="#8a7aff"/><stop offset="1" stop-color="#00f0ff"/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
       <div class="wordmark">Conspira AI</div>
-      <div class="chip"><i></i> Presenting Major League Dev</div>
+      <span class="chip"><i></i> Presenting Major League Dev</span>
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div class="eyebrow">Conspira AI Studio</div>
         <h1>Exploring the future of online building.</h1>
         <p class="sub">
-          Conspira AI is a creative studio.<br />
-          Our flagship project is <strong>Major League Dev</strong> — a creator-first network where developers ship, remix, and get seen.
+          Conspira AI is a creative studio. Our flagship project is <strong>Major League Dev</strong> — a creator-first network where developers ship, remix, and get seen.
         </p>
         <div class="cta">
           <a class="btn" href="/go" id="launch">🚀 Explore Major League Dev</a>
-          <a class="btn secondary" href="https://x.com/Conspira_AI" target="_blank" rel="noopener">👀 Follow on X</a>
+          <a class="btn secondary" href="https://x.com/Conspira_AI" target="_blank" rel="noopener">↗ Follow on X</a>
         </div>
       </section>
 
-      <section class="grid">
-        <div class="card glow">
-          <div class="kicker">About the studio</div>
-          <p>
-            Conspira AI is the umbrella brand — the studio that designs, builds, and presents our projects. It’s the front door to everything we ship.
-          </p>
-          <ul class="list" aria-label="Principles">
-            <li>Simple ideas, polished execution</li>
-            <li>Projects you can actually use</li>
-            <li>Design for momentum</li>
-          </ul>
-        </div>
-
+      <!-- ROW -->
+      <section class="row">
         <div class="card">
-          <div class="kicker">Flagship: Major League Dev</div>
-          <p>
-            Major League Dev is our live build — a network for developers and teams.<br />
-            Profiles, project pages, remix cards, and a curated feed for builders.
-          </p>
-          <a class="btn" href="/go">Launch Major League Dev</a>
-          <p class="note" style="margin-top:10px">Tip: We’ll wire <code>/go</code> to your live MLD URL later. For now this button is a placeholder.</p>
+          <div class="kicker">About</div>
+          <p style="margin:0">Conspira AI is the umbrella studio — the front door to everything we ship.</p>
         </div>
-      </section>
-
-      <section class="card" style="margin-top:16px">
-        <div class="kicker">Now building (quick note you can edit)</div>
-        <textarea aria-label="Status note (edit in file)">• Profile pages (alpha)
-• Remix cards (design QA)
-• Follow lists (WIP)</textarea>
-        <div class="note">Edit this text right in the HTML file to update the homepage status without a CMS.</div>
+        <div class="card">
+          <div class="kicker">Flagship</div>
+          <p style="margin:0 0 10px"><strong>Major League Dev</strong> — profiles, project pages, remix cards, and a curated feed for builders.</p>
+          <a class="btn" href="/go">Launch Major League Dev</a>
+        </div>
       </section>
     </main>
 
@@ -151,15 +137,14 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-
+    // Pass UTM to /go so you can see traffic source when you wire the redirect
     (function(){
-      var a = document.getElementById('launch');
-      if(!a) return;
-      var params = new URLSearchParams(window.location.search);
-      if(!params.has('utm_source')) params.set('utm_source','conspirai.com');
-      if(!params.has('utm_medium')) params.set('utm_medium','landing');
-      if(!params.has('utm_campaign')) params.set('utm_campaign','mld_intro');
-      a.href = '/go?' + params.toString();
+      var a = document.getElementById('launch'); if(!a) return;
+      var p = new URLSearchParams(location.search);
+      if(!p.has('utm_source')) p.set('utm_source','conspirai.com');
+      if(!p.has('utm_medium')) p.set('utm_medium','landing');
+      if(!p.has('utm_campaign')) p.set('utm_campaign','mld_intro');
+      a.href = '/go?' + p.toString();
     })();
   </script>
 </body>
