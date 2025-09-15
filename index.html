@@ -3,96 +3,166 @@
 <head>
   <meta charset="utf-8" />
   <title>Conspira AI × Major League Dev</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Conspira AI is a creative studio. Our flagship project is Major League Dev — a creator-first network where developers ship, remix, and get seen." />
-  <meta name="theme-color" content="#0B0B12" />
+  <meta name="theme-color" content="#0A0B12" />
 
-  <!-- Social cards -->
+  <!-- Social cards (swap og:image when you have one hosted) -->
   <meta property="og:title" content="Conspira AI — Presenting Major League Dev" />
   <meta property="og:description" content="Exploring the future of online building." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://conspirai.com" />
-  <!-- Replace this image URL when you have one -->
   <meta property="og:image" content="https://conspirai.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
+    /* ==============================
+       BRAND TOKENS (locked to your ask)
+       ============================== */
+
+    /* Conspira AI (neon purple + neon green) */
     :root{
-      /* Brand tokens (MLD vibe) */
-      --bg:#0b0b12;         /* deep indigo/black */
-      --ink:#F6F7FF;        /* near-white text */
-      --muted:#A6A9B8;      /* secondary text */
-      --line:#1D2133;       /* subtle borders */
-      --card:#111320;       /* card surface */
-      --accent:#8A7AFF;     /* neon violet */
-      --accent2:#00F0FF;    /* cyan glow */
-      --r:16px;             /* radius */
-      --shadow:0 8px 30px rgba(0,0,0,.45);
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, "Helvetica Neue", Arial;
+      --studio-purple: #9B5CFF;  /* vivid neon-ish purple */
+      --studio-green:  #39FF14;  /* neon green */
+      --bg:            #0A0B12;  /* deep indigo-black */
+      --ink:           #F6F7FF;  /* near-white text */
+      --muted:         #A6A9B8;  /* secondary text */
+      --line:          #1D2133;  /* hairline borders */
+      --card:          #111320;  /* card surface */
+      --r:16px;
+      --shadow:0 12px 40px rgba(0,0,0,.55);
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial;
     }
 
-    *{box-sizing:border-box} html,body{height:100%}
+    /* Major League Dev (American flag, modern SaaS) */
+    :root{
+      --mld-red:   #BF0A30; /* US flag red */
+      --mld-red-2: #E11D2E; /* modern lighter red for gradients */
+      --mld-blue:  #002868; /* US flag blue */
+      --mld-blue-2:#1D4ED8; /* modern blue accent */
+      --mld-white: #FFFFFF; /* white */
+    }
+
+    /* ============ Foundations ============ */
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      margin:0; color:var(--ink); font-family:var(--font); line-height:1.4; -webkit-font-smoothing:antialiased;
+      margin:0; color:var(--ink); background:var(--bg);
+      font-family:var(--font); -webkit-font-smoothing:antialiased; line-height:1.4;
+
+      /* Conspira AI neon field (no image) */
       background:
-        radial-gradient(1200px 680px at 80% -10%, rgba(138,122,255,.16), transparent 60%),
-        radial-gradient(1000px 600px at 10% 110%, rgba(0,240,255,.10), transparent 60%),
+        radial-gradient(1100px 700px at 85% -10%, rgba(155,92,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 10% 115%, rgba(57,255,20,.18), transparent 60%),
         var(--bg);
     }
+    .wrap{max-width:1040px; margin:0 auto; padding:22px}
 
-    .wrap{max-width:980px; margin:0 auto; padding:22px}
-
-    /* Header */
+    /* ===== Header ===== */
     header{display:flex; align-items:center; gap:12px}
-    .logo{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(138,122,255,.18), rgba(0,240,255,.14)); border:1px solid var(--line)}
-    .wordmark{font-weight:700; letter-spacing:.2px}
-    .chip{margin-left:auto; font-size:12.5px; color:var(--muted); padding:6px 10px; border:1px solid var(--line);
-      border-radius:999px; background:rgba(255,255,255,.03); display:inline-flex; align-items:center; gap:8px}
-    .chip i{width:6px;height:6px;border-radius:50%;background:var(--accent2);box-shadow:0 0 12px var(--accent2)}
-
-    /* Hero */
-    .hero{
-      margin-top:34px; border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow);
+    .logo{
+      width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)),
-        radial-gradient(160% 140% at 100% -20%, rgba(138,122,255,.18), transparent 60%),
-        radial-gradient(160% 120% at -10% 120%, rgba(0,240,255,.12), transparent 60%),
-        var(--card);
-      padding:28px;
+        linear-gradient(135deg, rgba(155,92,255,.25), rgba(57,255,20,.18));
+      border:1px solid var(--line); box-shadow: var(--shadow);
     }
-    .eyebrow{color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.4px}
-    h1{margin:8px 0 10px; font-size: clamp(28px, 4.4vw, 48px); line-height:1.08}
-    .sub{color:var(--muted); font-size: clamp(15px, 2.1vw, 18px); max-width:720px}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-    .btn{
-      background:linear-gradient(180deg, var(--accent), #6e5eff);
-      color:#0a0a12; font-weight:700; font-size:14px; padding:12px 16px; border-radius:12px;
-      text-decoration:none; display:inline-flex; align-items:center; gap:8px; box-shadow:var(--shadow)
+    .wordmark{font-weight:800; letter-spacing:.3px}
+    .chip{
+      margin-left:auto; font-size:12.5px; color:var(--muted); padding:6px 10px;
+      border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04);
+      display:inline-flex; align-items:center; gap:8px
     }
-    .btn.secondary{background:transparent; color:var(--ink); border:1px solid var(--line); box-shadow:none}
+    .chip i{width:6px;height:6px;border-radius:50%; background:var(--studio-green); box-shadow:0 0 12px var(--studio-green)}
 
-    /* Cards row */
+    /* ===== Hero (Conspira AI aura) ===== */
+    .hero{
+      position:relative; margin-top:34px; border-radius:var(--r); overflow:hidden;
+      padding:28px; border:1px solid var(--line); box-shadow:var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00)),
+        radial-gradient(140% 140% at 100% -20%, rgba(155,92,255,.22), transparent 60%),
+        radial-gradient(140% 120% at -10% 120%, rgba(57,255,20,.16), transparent 60%),
+        rgba(255,255,255,.02);
+      isolation:isolate;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:-1px; border-radius:calc(var(--r) + 2px);
+      background: conic-gradient(from 180deg at 50% 50%, rgba(155,92,255,.38), rgba(57,255,20,.28), rgba(155,92,255,.38));
+      filter: blur(28px); opacity:.22; z-index:-1; animation: spin 12s linear infinite;
+    }
+    @keyframes spin{ to{ transform: rotate(360deg);} }
+
+    .eyebrow{color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:.4px}
+    h1{margin:8px 0 10px; font-size: clamp(28px, 4.4vw, 50px); line-height:1.08}
+    .sub{color:var(--muted); font-size: clamp(15px, 2vw, 18px); max-width:720px}
+
+    /* ===== CTAs (MLD takes over with red/white/blue) ===== */
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+
+    .btn{
+      text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+      font-weight:800; font-size:14px; padding:12px 16px; border-radius:12px;
+      transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    }
+    /* MLD primary: red button, white text, subtle blue outline = flag but SaaS */
+    .btn.mld{
+      color:var(--mld-white);
+      background:linear-gradient(180deg, var(--mld-red), var(--mld-red-2));
+      border:1px solid rgba(0,40,104,.45); /* blue outline hint */
+      box-shadow:
+        0 10px 30px rgba(191,10,48,.35),
+        0 0 0 2px rgba(255,255,255,.04) inset;
+    }
+    .btn.mld:hover{ transform: translateY(-1px); filter: brightness(1.03); box-shadow:0 14px 36px rgba(191,10,48,.45); }
+
+    /* Secondary: clean blue outline button */
+    .btn.secondary{
+      color:var(--ink);
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(0,40,104,.55);
+      box-shadow:none; font-weight:700;
+    }
+    .btn.secondary:hover{ transform: translateY(-1px); box-shadow:0 8px 24px rgba(0,40,104,.25); }
+
+    /* ===== Cards row ===== */
     .row{display:grid; gap:14px; margin-top:16px}
     @media (min-width:860px){ .row{grid-template-columns:1fr 1fr} }
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
-      border:1px solid var(--line); border-radius:var(--r); padding:18px; box-shadow:var(--shadow)}
+    .card{
+      position:relative; overflow:hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.00));
+      border:1px solid var(--line); border-radius:var(--r); padding:18px; box-shadow:var(--shadow)
+    }
+    /* Left card (studio) gets purple/green wash */
+    .card.studio::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background: radial-gradient(600px 240px at 120% -20%, rgba(155,92,255,.18), transparent 60%);
+      opacity:.6;
+    }
+    /* Right card (MLD) gets subtle red/blue corner accents */
+    .card.mld::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(420px 180px at 110% -10%, rgba(0,40,104,.25), transparent 60%),
+        radial-gradient(380px 160px at -10% 110%, rgba(191,10,48,.22), transparent 60%);
+      opacity:.65;
+    }
     .kicker{font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px; margin-bottom:6px}
 
+    /* ===== Footer ===== */
     footer{margin:28px 0 12px; color:var(--muted); font-size:12.5px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
-    a.link{color:#cfd2ff; text-underline-offset:3px}
+    a.link{color:#9CC9FF; text-underline-offset:3px}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="logo" aria-hidden="true">
-        <!-- inline SVG so no external asset needed -->
+        <!-- abstract mark (swap later for Rhino if you want) -->
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 14c3-6 13-6 16 0-3 6-13 6-16 0Z" stroke="url(#g)" stroke-width="1.5"/>
           <defs>
             <linearGradient id="g" x1="0" y1="0" x2="24" y2="24">
-              <stop stop-color="#8a7aff"/><stop offset="1" stop-color="#00f0ff"/>
+              <stop stop-color="var(--studio-purple)"/><stop offset="1" stop-color="var(--studio-green)"/>
             </linearGradient>
           </defs>
         </svg>
@@ -110,21 +180,21 @@
           Conspira AI is a creative studio. Our flagship project is <strong>Major League Dev</strong> — a creator-first network where developers ship, remix, and get seen.
         </p>
         <div class="cta">
-          <a class="btn" href="/go" id="launch">🚀 Explore Major League Dev</a>
+          <a class="btn mld" href="/go" id="launch">🚀 Explore Major League Dev</a>
           <a class="btn secondary" href="https://x.com/Conspira_AI" target="_blank" rel="noopener">↗ Follow on X</a>
         </div>
       </section>
 
       <!-- ROW -->
       <section class="row">
-        <div class="card">
+        <div class="card studio">
           <div class="kicker">About</div>
           <p style="margin:0">Conspira AI is the umbrella studio — the front door to everything we ship.</p>
         </div>
-        <div class="card">
+        <div class="card mld">
           <div class="kicker">Flagship</div>
           <p style="margin:0 0 10px"><strong>Major League Dev</strong> — profiles, project pages, remix cards, and a curated feed for builders.</p>
-          <a class="btn" href="/go">Launch Major League Dev</a>
+          <a class="btn mld" href="/go">Launch Major League Dev</a>
         </div>
       </section>
     </main>
@@ -137,14 +207,14 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    // Pass UTM to /go so you can see traffic source when you wire the redirect
+    // Keep UTM params if you later wire /go on Vercel/Netlify
     (function(){
-      var a = document.getElementById('launch'); if(!a) return;
-      var p = new URLSearchParams(location.search);
+      var a=document.getElementById('launch'); if(!a) return;
+      var p=new URLSearchParams(location.search);
       if(!p.has('utm_source')) p.set('utm_source','conspirai.com');
       if(!p.has('utm_medium')) p.set('utm_medium','landing');
       if(!p.has('utm_campaign')) p.set('utm_campaign','mld_intro');
-      a.href = '/go?' + p.toString();
+      a.href='/go?'+p.toString();
     })();
   </script>
 </body>
