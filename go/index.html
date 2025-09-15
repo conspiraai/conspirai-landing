@@ -1,9 +1,10 @@
 <!doctype html>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=https://YOUR-MLD-URL-HERE">
 <title>Redirecting…</title>
+<meta http-equiv="refresh" content="0; url=https://YOUR-MLD-URL-HERE">
 <link rel="canonical" href="https://YOUR-MLD-URL-HERE">
 <script>
+  // Preserve any UTM params when redirecting
   const target = new URL("https://YOUR-MLD-URL-HERE");
   const qs = new URLSearchParams(location.search);
   qs.forEach((v,k)=>target.searchParams.set(k,v));
