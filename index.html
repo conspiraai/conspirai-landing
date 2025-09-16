@@ -2,193 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <title>Conspira AI × Major League Dev</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Conspira AI × Major League Dev — Launch</title>
+  <meta name="description" content="Major League Dev — a creator-first dev network. Presented by Conspira AI." />
 
-  <!-- Meta / Social -->
-  <meta name="description" content="Major League Dev is live. The home for builders just launched its coin. Join the locker room and get the daily dev pulse." />
-  <meta property="og:title" content="Major League Dev is Live — Join the Launch" />
-  <meta property="og:description" content="The home for builders just launched its coin. Daily pulse. Stimulated launches. Real-time alpha." />
-  <meta property="og:image" content="https://conspiraai.com/assets/cia-pill.png" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Major League Dev — Presented by Conspira AI" />
+  <meta property="og:description" content="Build in public. Remix projects. Get seen." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0c1117" />
-  <link rel="icon" href="/assets/cia-pill.png" />
+  <meta property="og:url" content="https://conspirai.com" />
+  <meta property="og:image" content="https://conspirai.com/og.jpg" /> <!-- TODO: add -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Conspira_AI" /> <!-- TODO: your handle -->
+  <meta name="theme-color" content="#0B0B12" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
 
   <style>
     :root{
-      --bg:#0b0f14;             /* deep night */
-      --panel:#0f141b;          /* card bg */
-      --text:#eaf0f6;           /* primary text */
-      --muted:#9fb0c0;          /* secondary text */
-      --ring:rgba(255,255,255,.08);
-      --brand-1:#8b5cf6;        /* Conspira purple */
-      --brand-2:#22d3ee;        /* cyan accent */
-      --cta-red:#ff6b6b;        /* MLD montage red */
-      --cta-blue:#9bb7ff;       /* MLD montage blue */
-      --ok:#2fe9a3;
-      --grad-cta: linear-gradient(90deg, var(--cta-red), #ffd1d6 45%, var(--cta-blue));
-      --grad-hero: radial-gradient(1200px 600px at 10% -10%, rgba(136,166,255,.12), transparent 60%),
-                   radial-gradient(1200px 600px at 90% 0%, rgba(255,107,107,.12), transparent 60%),
-                   radial-gradient(900px 400px at 50% 100%, rgba(47,233,163,.08), transparent 60%),
-                   #0b0f14;
+      /* ======= BRAND TOKENS ======= */
+      /* MLD core */
+      --bg: #0b0b12;
+      --card: #111320;
+      --ink: #f5f7ff;
+      --muted: #a6a9b8;
+      --line: #1d2133;
+      /* Accent (neon-ish) */
+      --accent: #8a7aff; /* swap if you have exact MLD purple */
+      --accent-2: #00f0ff; /* subtle glow secondary */
+      /* Type */
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(0,0,0,.4);
     }
-
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%}
-    body{font:16px/1.5 ui-sans-serif, system-ui, -apple-system, Segoe UI, Inter, Roboto, Helvetica, Arial; color:var(--text); background:var(--bg)}
-    a{color:#cfe1ff; text-decoration:none}
-    img{max-width:100%; height:auto; display:block}
-
-    /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:40;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:12px 16px;
-      background:rgba(10,13,18,.72); backdrop-filter:saturate(1.2) blur(10px);
-      border-bottom:1px solid var(--ring);
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 700px at 80% -10%, rgba(138,122,255,.15), transparent 60%),
+                          radial-gradient(1000px 600px at 10% 110%, rgba(0,240,255,.10), transparent 60%),
+                          var(--bg);
+      color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased; line-height:1.4;
     }
-    .brand{display:flex; align-items:center; gap:10px}
-    .brand .logo{width:32px; filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));}
-    .brand .word{font-weight:700; letter-spacing:.2px}
-    .brand .word b{background:linear-gradient(90deg,#a78bfa,#60a5fa); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .links{display:flex; gap:14px}
-    .links a{color:#c9d6e2; opacity:.9}
-    .links a:hover{opacity:1}
-    .actions{display:flex; gap:10px; align-items:center}
-    .chip{padding:8px 12px; border-radius:12px; background:linear-gradient(90deg,#1f2937,#0f172a); border:1px solid var(--ring); color:#cfe1ff}
-    .cta{padding:10px 14px; border-radius:12px; background:var(--grad-cta); color:#0b0f14; font-weight:800; box-shadow:0 8px 24px rgba(0,0,0,.35)}
-    .cta:hover{transform:translateY(-1px)}
-
-    /* HERO */
+    .wrap{max-width:1080px; margin:0 auto; padding:24px}
+    header{display:flex; align-items:center; gap:14px}
+    .logo{
+      width:40px; height:40px; border-radius:10px;
+      display:grid; place-items:center; background:linear-gradient(135deg, rgba(138,122,255,.18), rgba(0,240,255,.14));
+      border:1px solid var(--line);
+    }
+    .wordmark{font-weight:700; letter-spacing:.2px}
+    .tag{margin-left:auto; font-size:13px; color:var(--muted)}
     .hero{
-      position:relative; overflow:hidden; border-bottom:1px solid var(--ring);
-      background:var(--grad-hero);
+      margin-top:64px; display:grid; gap:18px; max-width:780px;
     }
-    .hero-inner{
-      max-width:1100px; margin:0 auto; padding:56px 16px 36px;
-      display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center;
+    .eyebrow{color:var(--muted); font-size:14px; letter-spacing:.5px; text-transform:uppercase}
+    h1{font-size: clamp(32px, 4.2vw, 56px); line-height:1.1; margin:0}
+    .sub{font-size: clamp(16px, 2vw, 20px); color:var(--muted)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+    .btn{
+      appearance:none; border:none; cursor:pointer;
+      background:linear-gradient(180deg, var(--accent), #6e5eff);
+      color:#0a0a12; font-weight:700; padding:14px 18px; border-radius:12px;
+      box-shadow: var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px;
     }
-    @media (max-width:920px){ .hero-inner{grid-template-columns:1fr; padding:44px 16px}}
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px;
-         background:linear-gradient(90deg,#111827,#0b1220); border:1px solid var(--ring); color:#b4c6d8; font-size:13px;}
-    .tag .dot{width:6px; height:6px; border-radius:50%; background:var(--ok); box-shadow:0 0 12px var(--ok)}
-    h1{margin:.3em 0 .2em; font-size:clamp(32px,6vw,64px); line-height:1.05}
-    .grad{background:var(--grad-cta); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .sub{color:#bcd0df; max-width:54ch}
-    .hero-cta{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:900}
-    .btn.primary{background:var(--grad-cta); color:#0b0f14}
-    .btn.secondary{background:linear-gradient(90deg,#10161d,#0b1220); color:#cfe1ff; border:1px solid var(--ring)}
-    .note{margin-top:10px; color:#93a9bb; font-size:14px}
+    .btn:focus-visible{outline:2px solid var(--accent-2); outline-offset:3px}
+    .btn.secondary{
+      background:transparent; color:var(--ink); border:1px solid var(--line);
+      box-shadow:none;
+    }
+
+    .grid{display:grid; grid-template-columns:1fr; gap:16px; margin-top:36px}
+    @media(min-width:900px){ .grid{ grid-template-columns: 1.2fr .8fr; } }
+
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)) , var(--panel);
-      border:1px solid var(--ring); border-radius:18px; padding:18px;
-      box-shadow:0 10px 28px rgba(0,0,0,.35)
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+      border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow: var(--shadow);
     }
-    .card h3{margin:.2em 0 .4em}
-    .list{display:grid; gap:12px; margin:12px 0 0; padding:0; list-style:none}
-    .list li{display:flex; gap:10px; color:#cfe1f2}
-    .list li .b{font-weight:700; color:#eaf0f6}
-
-    /* ROADMAP */
-    .wrap{max-width:1100px; margin:22px auto; padding:0 16px}
-    .row{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    @media (max-width:900px){ .row{grid-template-columns:1fr}}
-    .kicker{font-size:12px; letter-spacing:.2em; color:#8ea3b5}
-    .steps{display:grid; gap:10px; margin-top:10px}
-    .step{padding:14px; border-radius:14px; border:1px solid var(--ring); background:linear-gradient(180deg, rgba(255,255,255,.02), transparent)}
-    .step b{color:#fff}
-    .foot{
-      max-width:1100px; margin:36px auto; padding:16px; color:#8ea3b5; border-top:1px solid var(--ring);
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap
+    .kicker{font-size:13px; color:var(--muted); letter-spacing:.4px; text-transform:uppercase}
+    .list{display:grid; gap:10px; margin-top:8px}
+    .list li{list-style:none; padding:10px 12px; background:rgba(255,255,255,.02); border:1px solid var(--line); border-radius:12px}
+    .now{display:grid; gap:10px}
+    .now textarea{
+      width:100%; min-height:140px; padding:12px; resize:vertical;
+      background:#0f1220; color:var(--ink); border:1px solid var(--line); border-radius:12px;
+      font-family:var(--font); font-size:14px;
+    }
+    .note{font-size:12px; color:var(--muted)}
+    footer{margin:40px 0 12px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .glow{
+      position:relative;
+    }
+    .glow::after{
+      content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px);
+      background: conic-gradient(from 180deg at 50% 50%, rgba(138,122,255,.35), rgba(0,240,255,.25), rgba(138,122,255,.35));
+      filter: blur(28px); opacity:.25; z-index:-1;
     }
 
-    /* Small helpers */
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
-    .pill{padding:.2em .6em; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid var(--ring)}
+    /* Simple “studio bumper” chip */
+    .chip{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--line); border-radius:999px; font-size:13px; color:var(--muted);
+      background:rgba(255,255,255,.02);
+    }
+    .chip i{width:6px; height:6px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 14px var(--accent-2)}
+    a.link{color:#cfd2ff; text-underline-offset:3px}
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <header class="nav">
-    <div class="brand">
-      <img class="logo" src="/assets/cia-pill.png" alt="Conspira AI logo" />
-      <div class="word">Conspira <b>AI</b></div>
-    </div>
-    <nav class="links">
-      <a href="#launch">Launch</a>
-      <a href="#why">Why</a>
-      <a href="#how">How</a>
-    </nav>
-    <div class="actions">
-      <span class="chip">Presenting Major League Dev</span>
-      <a class="cta" href="https://conspiraai.github.io/MLD/" target="_blank" rel="noopener">Explore MLD</a>
-    </div>
-  </header>
-
-  <!-- HERO / COIN CTA -->
-  <section id="launch" class="hero">
-    <div class="hero-inner">
-      <div>
-        <span class="tag"><span class="dot"></span> Coin Launch</span>
-        <h1><span class="grad">Major League Dev</span> is live.</h1>
-        <p class="sub">The home for builders just launched its coin. Get in early, join the locker room, and tap into the daily dev pulse.</p>
-
-        <div class="hero-cta">
-          <!-- TODO: update this link to your official coin page -->
-          <a class="btn primary" href="https://conspiraai.com/coin" target="_blank" rel="noopener">Join the Launch</a>
-          <a class="btn secondary" href="https://conspiraai.github.io/MLD/" target="_blank" rel="noopener">Open Major League Dev</a>
-        </div>
-
-        <!-- Optional token line (delete if you don’t want to show it) -->
-        <p class="note mono">Token: <span class="pill">TODO-TOKEN-ADDRESS-HERE</span></p>
-      </div>
-
-      <div class="card">
-        <h3>What you get</h3>
-        <ul class="list">
-          <li>⚡ <span class="b">Daily Pulse:</span> the fastest way to see hot repos, posts, and tools.</li>
-          <li>🧠 <span class="b">Locker Room:</span> early previews, launch hype, and builder-only drops.</li>
-          <li>🎛️ <span class="b">Utility:</span> access to experiments, remixes, and dev-native perks as we ship.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY + HOW -->
   <div class="wrap">
-    <div id="why" class="row">
-      <div class="card">
-        <div class="kicker">WHY THIS</div>
-        <h3>Built for builders.</h3>
-        <div class="steps">
-          <div class="step">We curate signal — not noise — so you can discover tools worth trying in seconds.</div>
-          <div class="step">We design for momentum. Simple ideas, polished execution, shipped in public.</div>
-          <div class="step">We turn community energy into real distribution for the projects we love.</div>
+    <header aria-label="Site header">
+      <div class="logo" aria-hidden="true">
+        <!-- TODO: replace with Rhino or MLD mark -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 14c3-6 13-6 16 0-3 6-13 6-16 0Z" stroke="url(#g)" stroke-width="1.5"/>
+          <defs><linearGradient id="g" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#8a7aff"/><stop offset="1" stop-color="#00f0ff"/></linearGradient></defs>
+        </svg>
+      </div>
+      <div class="wordmark">Major League Dev</div>
+      <div class="tag chip"><i></i> Presented by Conspira AI</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Conspira AI × Major League Dev</div>
+        <h1>Build in public. Remix projects. Get seen.</h1>
+        <p class="sub">Major League Dev is a creator-first network for developers and crews. Profiles, project pages, remixable building blocks, and a feed tuned for shipping.</p>
+        <div class="cta">
+          <a class="btn" href="/go" id="launch">🚀 Launch Major League Dev</a>
+          <a class="btn secondary" href="https://x.com/Conspira_AI" target="_blank" rel="noopener">👀 Follow the build on X</a>
         </div>
-      </div>
-      <div id="how" class="card">
-        <div class="kicker">HOW TO JOIN</div>
-        <h3>Three quick steps.</h3>
-        <ol class="steps">
-          <li class="step"><b>Get the coin</b> — use the Launch button above. (Details on supported chains and contracts on the launch page.)</li>
-          <li class="step"><b>Join the Locker Room</b> — announcements, previews, and builder-only threads.</li>
-          <li class="step"><b>Plug into MLD</b> — check the daily pulse and start shipping in public.</li>
-        </ol>
-      </div>
-    </div>
+      </section>
+
+      <section class="grid">
+        <div class="card glow">
+          <div class="kicker">What you get</div>
+          <ul class="list" aria-label="Highlights">
+            <li>Build-in-public profiles for devs & teams</li>
+            <li>Project pages with roadmaps, links, and remix cards</li>
+            <li>Lightweight feeds curated for builders (not tourists)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="kicker">Now building</div>
+          <div class="now">
+            <p>We’re shipping profile pages, remix cards, and project follow lists. Tap “Launch” to see today’s build.</p>
+            <!-- Lightweight “CMS”: edit this text whenever you ship -->
+            <textarea aria-label="Status note (edit in file)">• Profile pages (alpha)
+• Remix cards (design QA)
+• Follow lists (wip)
+</textarea>
+            <span class="note">Edit the text above in the HTML file to update the homepage status.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="yr"></span> Conspira AI. All rights reserved.</div>
+      <div><a class="link" href="mailto:hello@conspirai.com">Contact</a> · <a class="link" href="#" aria-disabled="true">Terms</a></div>
+    </footer>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="foot">
-    <small>© 2025 Conspira AI Studio.</small>
-    <div>
-      <a href="https://x.com/conspira_ai" target="_blank" rel="noopener">@conspira_ai</a> ·
-      <a href="https://t.me/majorleaguedev" target="_blank" rel="noopener">Telegram</a> ·
-      <a href="https://conspiraai.github.io/MLD/" target="_blank" rel="noopener">Major League Dev</a>
-    </div>
-  </footer>
+  <script>
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
+    // Pass through UTM / ref to /go so analytics show ConspiraAI.com impact
+    (function(){
+      var a = document.getElementById('launch');
+      var params = new URLSearchParams(window.location.search);
+      if(!params.has('utm_source')) params.set('utm_source','conspirai.com');
+      if(!params.has('utm_medium')) params.set('utm_medium','landing');
+      if(!params.has('utm_campaign')) params.set('utm_campaign','mld_intro');
+      a.href = '/go?' + params.toString();
+    })();
+  </script>
+
+  <!-- TODO: Analytics (paste your GA/Pixel here) -->
 </body>
 </html>
